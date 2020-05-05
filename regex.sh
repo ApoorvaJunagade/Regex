@@ -15,3 +15,13 @@ echo "lastname is valid"
 else
 echo "first letter should be capital or lenght of your last name should be greater than 3"
 fi
+echo "enter email id"
+read email
+if [[ $email =~ ^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[a-zA-Z]+.[a-z]{2,4}$ ]]
+then
+echo "correct email id"
+else
+echo "incorrect"
+fi
+
+
