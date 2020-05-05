@@ -32,3 +32,11 @@ echo "valid mobile no"
 else
 echo "invalid moblile no."
 fi
+echo "enter your password"
+read pass
+if [[ $pass =~ ^([0-9a-zA-Z]{1,8})$ ]]
+then
+echo "password is valid"
+else
+echo "password is invalid"
+fi
