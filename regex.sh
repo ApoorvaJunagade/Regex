@@ -24,4 +24,11 @@ else
 echo "incorrect"
 fi
 
-
+echo "enter your mobile number"
+read mobile
+if [[ $mobile =~ ^([0-9]{2})" "([0-9]{10})$ ]]
+then
+echo "valid mobile no"
+else
+echo "invalid moblile no."
+fi
