@@ -1,9 +1,17 @@
 #! /bin/bash
-echo "enter your username"
+echo "enter your firstname"
 read username
-if [[ $username =~ ^[A-Z]+[a-z]{3}$ ]]
+if [[ $username =~ ^[A-Z]{1}([a-z]{3}) ]]
 then 
-echo "username is valid"
+echo "first name is valid"
 else 
-echo "first letter should be capital or lenght of your username should be greater than 3"
+echo "first letter should be capital or lenght of your first name should be greater than 3"
+fi
+echo "enter your last name"
+read lastname
+if [[ $lastname =~ ^[A-Z]{1}([a-z]{3}) ]]
+then
+echo "lastname is valid"
+else
+echo "first letter should be capital or lenght of your last name should be greater than 3"
 fi
