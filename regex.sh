@@ -1,7 +1,7 @@
 #! /bin/bash
 echo "enter your firstname"
 read username
-if [[ $username =~ ^([A-Z]{1})$+([a-z]{2,})$ ]]
+if [[ $username =~ ^[A-Z]{1}([a-z]{2,})$ ]]
 then 
 echo "first name is valid"
 else 
@@ -9,7 +9,7 @@ echo "first letter should be capital or lenght of your first name should be grea
 fi
 echo "enter your last name"
 read lastname
-if [[ $lastname =~ ^([A-Z]{1})$+([a-z]{2,})$ ]]
+if [[ $lastname =~ ^[A-Z]{1}([a-z]{2,})$ ]]
 then
 echo "lastname is valid"
 else
@@ -17,7 +17,7 @@ echo "first letter should be capital or lenght of your last name should be great
 fi
 echo "enter email id"
 read email
-if [[ $email =~ ^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[a-zA-Z]+.[a-z]{2,4}$ ]]
+if [[ $email =~ ^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]){2}$" ]]
 then
 echo "correct email id"
 else
@@ -34,7 +34,7 @@ echo "invalid moblile no."
 fi
 echo "enter your password"
 read pass
-if [[ $pass =~ ^([A-Z0-9a-z]{8,})$ ]]
+if [[ $pass =~ /^[a-zA-Z0-9]{8,}$/ ]]
 then
 echo "password is valid"
 else
