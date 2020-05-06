@@ -1,7 +1,7 @@
 #! /bin/bash
 echo "enter your firstname"
 read username
-if [[ $username =~ ^[A-Z]{1}([a-z]{3}) ]]
+if [[ $username =~ ^([A-Z]{1})$+([a-z]{2,})$ ]]
 then 
 echo "first name is valid"
 else 
@@ -9,7 +9,7 @@ echo "first letter should be capital or lenght of your first name should be grea
 fi
 echo "enter your last name"
 read lastname
-if [[ $lastname =~ ^[A-Z]{1}([a-z]{3}) ]]
+if [[ $lastname =~ ^([A-Z]{1})$+([a-z]{2,})$ ]]
 then
 echo "lastname is valid"
 else
@@ -34,7 +34,7 @@ echo "invalid moblile no."
 fi
 echo "enter your password"
 read pass
-if [[ $pass =~ ^([0-9a-zA-Z]{1,8})$ ]]
+if [[ $pass =~ ^([A-Z0-9a-z]{8,})$ ]]
 then
 echo "password is valid"
 else
