@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -x
 echo "enter your firstname"
 read username
 if [[ $username =~ ^[A-Z]{1}([a-z]{2,})$ ]]
@@ -15,9 +15,10 @@ echo "lastname is valid"
 else
 echo "first letter should be capital or lenght of your last name should be greater than 3"
 fi
+shopt -s extglob
 echo "enter email id"
 read email
-if [[ $email =~ ^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]){2}$" ]]
+if [[ $email =~ ^[A-Za-z0-9]+([._+-][A-Z0-9a-z]+)*@[a-zA-Z0-9]+.[a-z]{3,5}$ ]]
 then
 echo "correct email id"
 else
@@ -33,8 +34,9 @@ else
 echo "invalid moblile no."
 fi
 echo "enter your password"
+shopt -s extglob
 read pass
-if [[ $pass =~ /^[a-zA-Z0-9]{8,}$/ ]]
+if [[ $pass =~ ([a-zA-Z0-9(\@|\#|\$|\!|\%|\&)+]){8,} ]]
 then
 echo "password is valid"
 else
